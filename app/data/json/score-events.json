@@ -1,0 +1,27 @@
+[
+  {
+    "score": 420,
+    "productId": 1,
+    "playerId": 2
+  },
+  {
+    "score": 69,
+    "productId": 2,
+    "playerId": 3
+  },
+  {
+    "score": 150,
+    "productId": 1,
+    "playerId": 1
+  },
+  {
+    "score": 227,
+    "productId": 4,
+    "playerId": 5
+  },
+  {
+    "score": 720,
+    "productId": 8,
+    "playerId": 6
+  }
+]

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package leaderboard;
+
+option java_package = "proto.generated";
+option java_multiple_files = true;
+
+message ScoreEvent {
+  int64 playerId = 1;
+  int64 productId = 2;
+  double score = 3;
+}
+
+message Player {
+  int64 id = 1;
+  string name = 2;
+}
+
+message Product {
+  int64 id = 1;
+  string name = 2;
+}
