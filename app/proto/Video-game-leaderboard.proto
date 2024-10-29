@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package leaderboard;
 
-option java_package = "proto.generated";
+option java_package = "com.github.kibonga.proto.generated";
 option java_multiple_files = true;
 
 message ScoreEvent {

@@ -38,6 +38,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly 'org.projectlombok:lombok:1.18.34'
     annotationProcessor "org.projectlombok:lombok:1.18.34"
+
+    // https://mvnrepository.com/artifact/org.apache.kafka/kafka
+    implementation 'org.apache.kafka:kafka_2.13:3.8.0'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -51,11 +54,19 @@ application {
 
 tasks.register("generateProtoData", JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = "data.seed.App"
+    mainClass = "models.seed.App"
 }
 
 tasks.register("compileProtoFiles", Exec) {
     commandLine "bash", "scripts/generateProto.sh"
+}
+
+tasks.named("run") {
+    doFirst {
+        System.properties.each { key, value ->
+            jvmArgs "-D${key}=${value}"
+        }
+    }
 }
 
 tasks.named('test') {
